@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sri Nurindah Sari — PM & Project Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --terra: #C1440E;
+  --terra-light: #E8633A;
+  --terra-pale: #FFF0E8;
+  --yellow: #F5C842;
+  --yellow-pale: #FFFBEA;
+  --cream: #FFFBF5;
+  --dark: #1A1208;
+  --mid: #5C4A35;
+  --soft: #9B8570;
+  --white: #FFFFFF;
+  --card: #FFF8F2;
+  --border: #F0E4D4;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  padding: 1rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(255,251,245,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--terra);
+  font-weight: 700;
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  text-decoration: none;
+  color: var(--mid);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--terra); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding: 8rem 2.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-tag {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--dark);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border-radius: 2rem;
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--terra);
+}
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+.hero-location {
+  font-size: 0.85rem;
+  color: var(--soft);
+  margin-bottom: 2.5rem;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--terra);
+  color: white;
+  padding: 0.85rem 2rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--terra-light); transform: translateY(-2px); }
+.btn-ghost {
+  border: 2px solid var(--terra);
+  color: var(--terra);
+  padding: 0.85rem 2rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.btn-ghost:hover { background: var(--terra); color: white; transform: translateY(-2px); }
+
+/* HERO RIGHT — Stats */
+.hero-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(193,68,14,0.1); }
+.stat-card:first-child {
+  grid-column: span 2;
+  background: var(--terra);
+  color: white;
+  border-color: var(--terra);
+}
+.stat-card:first-child .stat-label { color: rgba(255,255,255,0.7); }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+  color: var(--dark);
+}
+.stat-card:first-child .stat-num { color: white; }
+.stat-num.yellow { color: var(--yellow); }
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--soft);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* ── SECTIONS ── */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2.5rem;
+}
+.section-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.section-tag::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: var(--terra);
+}
+h2.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+h2.section-title em { color: var(--terra); font-style: italic; }
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+.about-quote {
+  background: var(--yellow-pale);
+  border-left: 4px solid var(--yellow);
+  padding: 1.5rem 1.75rem;
+  border-radius: 0 1rem 1rem 0;
+  margin-bottom: 1.75rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--dark);
+  line-height: 1.6;
+}
+.about-body p {
+  font-size: 1rem;
+  color: var(--mid);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-weight: 300;
+}
+.about-body p strong { color: var(--dark); font-weight: 600; }
+.about-pills {
+  display: flex; flex-wrap: wrap; gap: 0.6rem;
+  margin-top: 2rem;
+}
+.pill {
+  background: var(--terra-pale);
+  color: var(--terra);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(193,68,14,0.2);
+}
+.about-right { display: flex; flex-direction: column; gap: 1.25rem; }
+.about-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+}
+.about-stat-icon {
+  width: 3rem; height: 3rem;
+  background: var(--terra-pale);
+  border-radius: 0.75rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+.about-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--terra);
+  line-height: 1;
+}
+.about-stat-label {
+  font-size: 0.78rem;
+  color: var(--soft);
+  margin-top: 0.2rem;
+}
+
+/* ── EXPERIENCE ── */
+.exp-section { background: var(--dark); padding: 6rem 0; }
+.exp-inner { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; }
+.exp-section .section-tag { color: var(--yellow); }
+.exp-section .section-tag::before { background: var(--yellow); }
+.exp-section h2.section-title { color: var(--white); }
+.exp-section h2.section-title em { color: var(--yellow); }
+
+.exp-list { display: flex; flex-direction: column; gap: 2rem; margin-top: 3.5rem; }
+
+.exp-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.exp-card:hover { border-color: rgba(245,200,66,0.3); }
+
+.exp-card-header {
+  padding: 2rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  cursor: pointer;
+}
+.exp-role {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.exp-company {
+  font-size: 0.9rem;
+  color: var(--yellow);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.exp-meta {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  font-family: 'DM Mono', monospace;
+}
+.exp-toggle {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex-shrink: 0;
+  user-select: none;
+}
+.exp-card.open .exp-toggle { background: var(--yellow); color: var(--dark); transform: rotate(45deg); }
+
+.exp-tags {
+  padding: 0 2.5rem 1.5rem;
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+}
+.exp-tag {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.6);
+  font-size: 0.72rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 2rem;
+  font-weight: 500;
+}
+
+.exp-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+.exp-card.open .exp-body { max-height: 2000px; }
+
+.exp-body-inner {
+  padding: 0 2.5rem 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 2rem;
+}
+
+.case-section { margin-bottom: 2rem; }
+.case-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 0.75rem;
+}
+.case-text {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+  font-weight: 300;
+}
+.case-text strong { color: rgba(255,255,255,0.9); font-weight: 500; }
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.impact-card {
+  background: rgba(245,200,66,0.06);
+  border: 1px solid rgba(245,200,66,0.15);
+  border-radius: 1rem;
+  padding: 1.1rem;
+  text-align: center;
+}
+.impact-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--yellow);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.impact-label {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.4;
+}
+
+.story-block {
+  background: rgba(193,68,14,0.1);
+  border-left: 3px solid var(--terra-light);
+  border-radius: 0 0.75rem 0.75rem 0;
+  padding: 1.1rem 1.4rem;
+  margin: 1.25rem 0;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.exp-bullets li {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  font-weight: 300;
+}
+.exp-bullets li::before {
+  content: '→';
+  color: var(--terra-light);
+  flex-shrink: 0;
+  margin-top: 0.05em;
+}
+
+/* ── SKILLS ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.skill-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.skill-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(193,68,14,0.08); }
+.skill-icon {
+  width: 2.75rem; height: 2.75rem;
+  background: var(--terra-pale);
+  border-radius: 0.75rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.skill-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.75rem;
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.skill-tag {
+  background: var(--cream);
+  color: var(--mid);
+  font-size: 0.73rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+}
+
+/* ── WHAT I'M LOOKING FOR ── */
+.looking-section {
+  background: var(--yellow-pale);
+  border: 1px solid rgba(245,200,66,0.3);
+  border-radius: 2rem;
+  padding: 3.5rem;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.looking-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.looking-title em { color: var(--terra); font-style: italic; }
+.looking-body {
+  font-size: 0.95rem;
+  color: var(--mid);
+  line-height: 1.75;
+  font-weight: 300;
+}
+.looking-right { display: flex; flex-direction: column; gap: 0.75rem; }
+.looking-item {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--mid);
+  line-height: 1.5;
+}
+.looking-dot {
+  width: 1.5rem; height: 1.5rem;
+  background: var(--yellow);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+/* ── CONTACT ── */
+.contact-section {
+  background: var(--terra);
+  padding: 6rem 0;
+}
+.contact-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.contact-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+.contact-left p {
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.contact-links { display: flex; flex-direction: column; gap: 1rem; }
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 1rem;
+  padding: 1.1rem 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+}
+.contact-link:hover { background: rgba(255,255,255,0.18); transform: translateX(4px); }
+.contact-icon {
+  width: 2.25rem; height: 2.25rem;
+  background: var(--yellow);
+  border-radius: 0.5rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.3);
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-left > * { animation: fadeUp 0.7s ease both; }
+.hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+.hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+.hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+.hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+.hero-right { animation: fadeUp 0.7s ease 0.4s both; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; gap: 3rem; }
+  .hero-right { grid-template-columns: 1fr 1fr; }
+  .stat-card:first-child { grid-column: span 2; }
+  section { padding: 4rem 1.5rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .exp-card-header { grid-template-columns: 1fr auto; }
+  .exp-body-inner { padding: 0 1.5rem 1.5rem; padding-top: 1.5rem; }
+  .exp-tags { padding: 0 1.5rem 1.25rem; }
+  .exp-card-header { padding: 1.5rem; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .looking-section { grid-template-columns: 1fr; padding: 2.5rem; }
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .impact-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Indah</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-top:8rem;">
+  <div class="hero-left">
+    <div class="hero-tag">✦ Open to work · Remote & Relocation</div>
+    <h1>Indah <em>makes things</em> ship.</h1>
+    <p class="hero-sub">Product & Project Manager with 4+ years building products from zero, fixing broken funnels, and keeping cross-functional teams aligned — even when everything is unclear. I sit at the intersection of business, users, and delivery.</p>
+    <p class="hero-location">📍 Jakarta, Indonesia</p>
+    <div class="hero-ctas">
+      <a href="#experience" class="btn-primary">See my work</a>
+      <a href="#contact" class="btn-ghost">Let's talk</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-card">
+      <div class="stat-num yellow">1M+ MAU</div>
+      <div class="stat-label">Community marketplace built from zero in 5 months · Toco.id</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Concurrent enterprise projects managed right now</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">95%</div>
+      <div class="stat-label">E-learning revenue growth · Kompas Institute</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">30+</div>
+      <div class="stat-label">Person cross-functional squads led across engineering, design, QA & ops</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-tag">Who I am</div>
+  <h2 class="section-title">From debugging code to<br/><em>owning the whole delivery.</em></h2>
+  <div class="about-grid">
+    <div class="about-body">
+      <div class="about-quote">"I started as a QA Engineer. That taught me something most PMs miss — quality is everyone's job, but someone has to own it."</div>
+      <p>I'm Indah. I started my career finding bugs, which turned out to be the best PM training possible. Because now I catch the gaps in requirements before they become sprint blockers, and I write acceptance criteria engineers actually trust.</p>
+      <p>I work best at the intersection of <strong>business goals and delivery reality</strong> — understanding what stakeholders actually need, translating that into plans teams can execute, and making sure the end result reflects the effort put in.</p>
+      <p>I've built a marketplace from zero to 1M+ users. I've fixed broken payment funnels across 30+ business units. I've managed 5 enterprise projects simultaneously with no senior PM above me. And in each of those situations, the real challenge was never the technical problem — it was <strong>getting the right people aligned on the right thing at the right time.</strong></p>
+      <p>That's what I do.</p>
+      <div class="about-pills">
+        <span class="pill">0→1 Builder</span>
+        <span class="pill">Ambiguity Resolver</span>
+        <span class="pill">Cross-functional Bridge</span>
+        <span class="pill">Delivery Owner</span>
+        <span class="pill">Stakeholder Translator</span>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-stat-row">
+        <div class="about-stat-icon">🏗️</div>
+        <div>
+          <div class="about-stat-num">4+</div>
+          <div class="about-stat-label">Years across QA, Product, and Project Management</div>
+        </div>
+      </div>
+      <div class="about-stat-row">
+        <div class="about-stat-icon">🚀</div>
+        <div>
+          <div class="about-stat-num">10+</div>
+          <div class="about-stat-label">Products built and shipped end-to-end</div>
+        </div>
+      </div>
+      <div class="about-stat-row">
+        <div class="about-stat-icon">🌏</div>
+        <div>
+          <div class="about-stat-num">APAC</div>
+          <div class="about-stat-label">Client delivery across Indonesia & regional enterprise clients</div>
+        </div>
+      </div>
+      <div class="about-stat-row">
+        <div class="about-stat-icon">🤖</div>
+        <div>
+          <div class="about-stat-num">AI-first</div>
+          <div class="about-stat-label">Claude · ChatGPT · Gemini for spec writing & research</div>
+        </div>
+      </div>
+      <div class="about-stat-row">
+        <div class="about-stat-icon">💬</div>
+        <div>
+          <div class="about-stat-num">C1</div>
+          <div class="about-stat-label">English fluency · Indonesian native · Cross-cultural comms</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<div class="exp-section" id="experience">
+<div class="exp-inner">
+  <div class="section-tag">Experience</div>
+  <h2 class="section-title">The work that<br/><em>shaped me.</em></h2>
+
+  <div class="exp-list">
+
+    <!-- VERTILOGIC -->
+    <div class="exp-card" id="card-vertilogic">
+      <div class="exp-card-header" onclick="toggleCard('card-vertilogic')">
+        <div>
+          <div class="exp-role">Project Manager</div>
+          <div class="exp-company">Vertilogic · Technology Consulting · Remote</div>
+          <div class="exp-meta">Feb 2025 – Present</div>
+        </div>
+        <div class="exp-toggle">+</div>
+      </div>
+      <div class="exp-tags">
+        <span class="exp-tag">Enterprise Delivery</span>
+        <span class="exp-tag">5 Concurrent Projects</span>
+        <span class="exp-tag">BRD / FSD</span>
+        <span class="exp-tag">Client Management</span>
+        <span class="exp-tag">APAC</span>
+        <span class="exp-tag">Agile / Scrum</span>
+      </div>
+      <div class="exp-body">
+        <div class="exp-body-inner">
+
+          <div class="case-section">
+            <div class="case-label">The situation</div>
+            <p class="case-text">Joined as the sole PM across 5 live enterprise client projects simultaneously — with no senior PM above me, no playbook, and clients ranging from an APAC insurance super app to a 13-domain automotive web ecosystem. This is where I stopped being a yes-person and learned what professional boundaries actually look like.</p>
+          </div>
+
+          <div class="story-block">"At Toco I was used to carrying everything myself. At Vertilogic I had to learn that not every problem is mine to solve alone — and that saying no to one thing is sometimes the only way to protect delivery on everything else."</div>
+
+          <div class="case-section">
+            <div class="case-label">What I actually did</div>
+            <ul class="exp-bullets">
+              <li><strong>Super App Insurance (APAC):</strong> Owned full module delivery — requirements gathering with client business and tech teams, authored BRD and FSD, coordinated TSD with dev team, managed change requests with formal CR documentation and manday estimation. Primary APAC client contact. App released on schedule with zero post-launch critical defects.</li>
+              <li><strong>B2B Loyalty Portal (FMCG):</strong> Sole PM from stakeholder discovery through UAT — full lifecycle. Coordinating dev, QA, UI/UX, and client with weekly sync cadence. Managing third-party receipt-validation API integration.</li>
+              <li><strong>Field Sales Platform:</strong> Feature delivery across GPS check-in, visit scheduling, stock management, biometric authentication, and PII data encryption. Owned scope, epics, user stories, acceptance criteria, and CR governance throughout.</li>
+              <li>Standardised sprint ceremonies, documentation templates, and status reporting across all engagements to improve delivery visibility and stakeholder confidence.</li>
+              <li>Researched and translated business unit feature requests into scoped, estimated delivery plans — acting as both PM and product thinker where no product layer existed.</li>
+            </ul>
+          </div>
+
+          <div class="case-section">
+            <div class="case-label">Key outcomes</div>
+            <div class="impact-grid">
+              <div class="impact-card">
+                <span class="impact-num">5</span>
+                <div class="impact-label">Concurrent enterprise sprints managed</div>
+              </div>
+              <div class="impact-card">
+                <span class="impact-num">0</span>
+                <div class="impact-label">Post-launch critical defects · Super App</div>
+              </div>
+              <div class="impact-card">
+                <span class="impact-num">On time</span>
+                <div class="impact-label">Super App delivered on schedule despite shifting client timelines</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- KOMPAS -->
+    <div class="exp-card" id="card-kompas">
+      <div class="exp-card-header" onclick="toggleCard('card-kompas')">
+        <div>
+          <div class="exp-role">Product Manager</div>
+          <div class="exp-company">Harian Kompas · Indonesia's Largest Media Company · Jakarta</div>
+          <div class="exp-meta">Feb 2024 – Feb 2025</div>
+        </div>
+        <div class="exp-toggle">+</div>
+      </div>
+      <div class="exp-tags">
+        <span class="exp-tag">Payment Ecosystem</span>
+        <span class="exp-tag">Funnel Analysis</span>
+        <span class="exp-tag">Loyalty 0→1</span>
+        <span class="exp-tag">E-learning Growth</span>
+        <span class="exp-tag">GA4 · Mixpanel · PostHog</span>
+      </div>
+      <div class="exp-body">
+        <div class="exp-body-inner">
+
+          <div class="case-section">
+            <div class="case-label">The situation</div>
+            <p class="case-text">Joined Kompas as PM for the payment ecosystem, promotion engine, loyalty programme, and e-learning platform — spanning multiple digital platforms and business units. The payment funnel was underperforming, the loyalty programme didn't exist yet, and the e-learning platform needed a growth push. I also acted as internal project coordinator for vendor-led deliveries across the business.</p>
+          </div>
+
+          <div class="case-section">
+            <div class="case-label">GoPay Recurring — the insight that mattered</div>
+            <p class="case-text">When I looked at subscriber drop-off data, the pattern was clear: users weren't churning because they didn't want to pay — they were churning because they <strong>couldn't</strong>. Many didn't own a credit card. The solution wasn't a checkout redesign. It was adding GoPay Recurring as a payment method — meeting users where they already were financially. This single initiative directly addressed a payment accessibility gap that was quietly killing subscription retention.</p>
+          </div>
+
+          <div class="story-block">"Most payment problems look like UX problems on the surface. This one was an access problem. The fix wasn't making the checkout prettier — it was making it possible for more people to actually complete it."</div>
+
+          <div class="case-section">
+            <div class="case-label">What I owned across the role</div>
+            <ul class="exp-bullets">
+              <li>Built the payment monitoring framework from scratch — instrumented full funnel in GA4, Mixpanel, and PostHog, tracking 6 core metrics including Payment Success Rate, CVR of Purchased to Selected Payment, and Payment Method Selection Rate.</li>
+              <li>Shipped GoPay Recurring to solve subscriber payment accessibility — identified the gap, scoped the integration, coordinated with engineering and payment gateway teams.</li>
+              <li>Added personalized payment recommendations based on user history and most-used methods — reduced decision friction at checkout.</li>
+              <li>Ran monthly RCA cadences with engineering and commercial leads to systematically diagnose and address payment funnel issues.</li>
+              <li>Built Kompas.id's first transaction-based loyalty points programme from zero — defined earn/burn logic, drafted integration specs, facilitated alignment between conflicting finance and growth priorities.</li>
+              <li>Acting internal PIC for vendor-led deliveries: e-learning platform (Kompas Institute) and eBook feature enhancements — gathered cross-BU requirements, managed vendor timelines, signed off on scope at delivery milestones.</li>
+            </ul>
+          </div>
+
+          <div class="case-section">
+            <div class="case-label">Key outcomes</div>
+            <div class="impact-grid">
+              <div class="impact-card">
+                <span class="impact-num">95%</span>
+                <div class="impact-label">E-learning revenue growth · Kompas Institute</div>
+              </div>
+              <div class="impact-card">
+                <span class="impact-num">+296%</span>
+                <div class="impact-label">Enrolled users growth</div>
+              </div>
+              <div class="impact-card">
+                <span class="impact-num">329%</span>
+                <div class="impact-label">eBook content engagement growth</div>
+              </div>
+              <div class="impact-card">
+                <span class="impact-num">2,500+</span>
+                <div class="impact-label">Monthly voucher redemptions after promotion fix (+55%)</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- TOCO -->
+    <div class="exp-card" id="card-toco">
+      <div class="exp-card-header" onclick="toggleCard('card-toco')">
+        <div>
+          <div class="exp-role">Product Manager — First PM</div>
+          <div class="exp-company">Sprout Digital Labs · Toco.id · Jakarta</div>
+          <div class="exp-meta">Dec 2022 – Feb 2024</div>
+        </div>
+        <div class="exp-toggle">+</div>
+      </div>
+      <div class="exp-tags">
+        <span class="exp-tag">0→1 Marketplace</span>
+        <span class="exp-tag">30-person Squad</span>
+        <span class="exp-tag">iOS · Android · Web</span>
+        <span class="exp-tag">Culture Building</span>
+        <span class="exp-tag">Founder Mode</span>
+      </div>
+      <div class="exp-body">
+        <div class="exp-body-inner">
+
+          <div class="case-section">
+            <div class="case-label">The real story</div>
+            <p class="case-text">I was 22, a fresh graduate, and the first PM at Toco. There was no roadmap, no process, no senior PM above me. The initial brief was a homepage revamp — but when the CEO saw the result, he realised the product needed to be rebuilt entirely from zero. That became my responsibility to lead.</p>
+            <p class="case-text" style="margin-top:0.75rem;">What made it genuinely hard wasn't the feature complexity. It was that I had to build the product, the operations, and the ways of working all at the same time — with a team of 5, limited resources, and a business direction that kept evolving mid-sprint.</p>
+          </div>
+
+          <div class="story-block">"There was a phase where I genuinely didn't know where to start — because everything felt urgent and everything was connected. What I learned is that in a zero-to-one environment, your job isn't to have all the answers. It's to make sure the team can keep moving even when nothing is certain."</div>
+
+          <div class="case-section">
+            <div class="case-label">How I actually built it</div>
+            <ul class="exp-bullets">
+              <li><strong>Started with structure, not speed:</strong> Documented decisions even when they were tentative. Mapped dependencies between teams and features. Translated vague stakeholder needs into actionable specs before a single line of code was written.</li>
+              <li><strong>Made the sequencing call:</strong> Prioritised seller activation before buyer acquisition — based on supply-side density hypotheses. This sequencing decision shaped every sprint for the first 5 months and was the foundation that made 1M+ MAU possible.</li>
+              <li><strong>Shipped four platforms simultaneously:</strong> Led a 30-person squad (engineering, design, QA, ops) to ship iOS app, Android app, web platform, and CMS at the same time — with one shared engineering team.</li>
+              <li><strong>Made the hard trade-off:</strong> Explicitly chose to delay web parity features to protect mobile app quality at launch. Mobile-first behaviour in early testing justified the call. It was the right one.</li>
+              <li><strong>Built the team culture:</strong> Created 'TocoFun' — regular team dinners and activities outside work hours. Set up retros as the space where professional friction got resolved openly, not suppressed. The result: most of the core team stayed together for 2–3 years. At a startup. That's not an accident.</li>
+              <li><strong>Handled everything else too:</strong> Vendor coordination, logistics partner outreach, third-party integrations, data dashboard setup, client meetings, go-to-market thinking, campaign execution — because in a small founding team, that's the job.</li>
+            </ul>
+          </div>
+
+          <div class="case-section">
+            <div class="case-label">Key outcomes</div>
+            <div class="impact-grid">
+              <div class="impact-card">
+                <span class="impact-num">1M+</span>
+                <div class="impact-label">MAU in 5 months from zero</div>
+              </div>
+              <div class="impact-card">
+                <span class="impact-num">IDR 855M</span>
+                <div class="impact-label">GMV generated within 5 months of launch</div>
+              </div>
+              <div class="impact-card">
+                <span class="impact-num">4</span>
+                <div class="impact-label">Platforms shipped simultaneously (iOS, Android, Web, CMS)</div>
+              </div>
+              <div class="impact-card">
+                <span class="impact-num">2–3 yrs</span>
+                <div class="impact-label">Core team retention — in an early-stage startup</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- QA -->
+    <div class="exp-card" id="card-qa">
+      <div class="exp-card-header" onclick="toggleCard('card-qa')">
+        <div>
+          <div class="exp-role">Quality Assurance Engineer</div>
+          <div class="exp-company">Sprout Digital Labs · Jakarta</div>
+          <div class="exp-meta">Jun 2022 – Dec 2022</div>
+        </div>
+        <div class="exp-toggle">+</div>
+      </div>
+      <div class="exp-tags">
+        <span class="exp-tag">Test Cases</span>
+        <span class="exp-tag">Defect Analysis</span>
+        <span class="exp-tag">Mobile & Web</span>
+        <span class="exp-tag">Acceptance Criteria</span>
+      </div>
+      <div class="exp-body">
+        <div class="exp-body-inner">
+          <div class="case-section">
+            <div class="case-label">Why this matters</div>
+            <p class="case-text">Before I was a PM, I was the person finding the bugs. I executed 3,000+ test cases and identified 450+ critical defects across mobile and web products — contributing to a ~60% reduction in post-release defect rates. This foundation is exactly why I now write acceptance criteria engineers trust, catch spec gaps before they become sprint blockers, and instinctively think about edge cases when scoping features.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-tag">What I bring</div>
+  <h2 class="section-title">Delivery, product, and the<br/><em>technical layer in between.</em></h2>
+
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🗂️</div>
+      <h3>Delivery & Governance</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">BRD / FSD / PRD</span>
+        <span class="skill-tag">Sprint Planning</span>
+        <span class="skill-tag">CR Governance</span>
+        <span class="skill-tag">Manday Estimation</span>
+        <span class="skill-tag">UAT Coordination</span>
+        <span class="skill-tag">App Store Release</span>
+        <span class="skill-tag">Risk Management</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🤝</div>
+      <h3>Stakeholder Management</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Enterprise Client Ownership</span>
+        <span class="skill-tag">Multi-BU Alignment</span>
+        <span class="skill-tag">Vendor Management</span>
+        <span class="skill-tag">APAC Cross-cultural</span>
+        <span class="skill-tag">Executive Reporting</span>
+        <span class="skill-tag">Agile Ceremonies</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <h3>Product & Analytics</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">OKRs & KPIs</span>
+        <span class="skill-tag">Funnel Analysis</span>
+        <span class="skill-tag">GA4 · Mixpanel · PostHog</span>
+        <span class="skill-tag">RICE · MoSCoW</span>
+        <span class="skill-tag">A/B Testing</span>
+        <span class="skill-tag">0→1 Delivery</span>
+        <span class="skill-tag">Roadmapping</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🛠️</div>
+      <h3>Tools</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Jira · Confluence</span>
+        <span class="skill-tag">Azure DevOps</span>
+        <span class="skill-tag">Notion · Trello</span>
+        <span class="skill-tag">Figma · Miro</span>
+        <span class="skill-tag">Slack</span>
+        <span class="skill-tag">Google Workspace</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <h3>AI-Augmented PM</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Claude · ChatGPT · Gemini</span>
+        <span class="skill-tag">AI Spec Drafting</span>
+        <span class="skill-tag">Research Synthesis</span>
+        <span class="skill-tag">Prompt Engineering</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🌏</div>
+      <h3>Languages & Education</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Indonesian · Native</span>
+        <span class="skill-tag">English · Fluent C1</span>
+        <span class="skill-tag">B.Sc. Computer Science</span>
+        <span class="skill-tag">Full-Stack PM · RevoU</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT I'M LOOKING FOR -->
+  <div class="looking-section">
+    <div>
+      <div class="looking-title">What I'm<br/><em>looking for next.</em></div>
+      <p class="looking-body">I do my best work in environments that move fast, trust their people, and care about what they're building. If your team debates ideas openly, gives PMs real ownership, and measures success by outcomes rather than just output — let's talk.</p>
+    </div>
+    <div class="looking-right">
+      <div class="looking-item">
+        <div class="looking-dot">✓</div>
+        <span>Product-first companies — global or remote-friendly — building something that matters</span>
+      </div>
+      <div class="looking-item">
+        <div class="looking-dot">✓</div>
+        <span>Flat hierarchy, high trust, direct communication — no politics</span>
+      </div>
+      <div class="looking-item">
+        <div class="looking-dot">✓</div>
+        <span>Roles with real ownership — not just execution on someone else's decisions</span>
+      </div>
+      <div class="looking-item">
+        <div class="looking-dot">✓</div>
+        <span>Teams that are collaborative and genuinely want to grow together</span>
+      </div>
+      <div class="looking-item">
+        <div class="looking-dot">✓</div>
+        <span>PM or Project Manager — open to the right role in the right environment</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <h2>Currently open<br/>to new roles.</h2>
+      <p style="margin-top:1rem;">I respond quickly. If you're building something interesting and want a PM who's strategic <em>and</em> hands-on — drop me a message.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:srinurindahsari00@gmail.com" class="contact-link">
+        <div class="contact-icon">✉️</div>
+        srinurindahsari00@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/sri-nurindah-sari" target="_blank" class="contact-link">
+        <div class="contact-icon">💼</div>
+        linkedin.com/in/sri-nurindah-sari
+      </a>
+      <a href="tel:+6287777820536" class="contact-link">
+        <div class="contact-icon">📱</div>
+        (+62) 877-7782-0536
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  Sri Nurindah Sari (Indah) · Jakarta, Indonesia · Open to remote & relocation · 2025
+</footer>
+
+<script>
+function toggleCard(id) {
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
