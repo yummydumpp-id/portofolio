@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Nurindah Sari — PM & Project Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --cream-dark: #F0EAE0;
+    --terracotta: #C4633A;
+    --terracotta-light: #E8895E;
+    --terracotta-dark: #8A3E1E;
+    --brown: #3D2314;
+    --brown-mid: #6B3D25;
+    --warm-gray: #8C7B6E;
+    --warm-white: #FFFDF9;
+    --sage: #7A8C6E;
+    --gold: #C49A3C;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.2rem 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(196, 99, 58, 0.12);
+  }
+
+  .nav-name {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: var(--brown);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--warm-gray);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--brown);
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 4rem 5rem;
+    position: relative;
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute; top: 0; right: -60px; bottom: 0;
+    width: 120px;
+    background: var(--brown);
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    z-index: 2;
+  }
+
+  .hero-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--terracotta-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name {
+    font-family: 'Lora', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    color: var(--warm-white);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--terracotta-light);
+  }
+
+  .hero-title {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255, 253, 249, 0.6);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: rgba(255, 253, 249, 0.75);
+    max-width: 380px;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: var(--terracotta);
+    color: var(--warm-white);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--terracotta-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid rgba(255,253,249,0.3);
+    color: rgba(255,253,249,0.8);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--terracotta-light); color: var(--terracotta-light); }
+
+  .hero-right {
+    background: var(--cream-dark);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 8rem 4rem 4rem 5rem;
+    position: relative;
+  }
+
+  .hero-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .metric-card {
+    background: var(--warm-white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid rgba(196, 99, 58, 0.12);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .metric-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(61, 35, 20, 0.1); }
+
+  .metric-number {
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .metric-label {
+    font-size: 0.75rem;
+    color: var(--warm-gray);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  .metric-card.featured {
+    grid-column: span 2;
+    background: var(--brown);
+    border-color: transparent;
+  }
+  .metric-card.featured .metric-number { color: var(--terracotta-light); font-size: 2.4rem; }
+  .metric-card.featured .metric-label { color: rgba(255,253,249,0.65); }
+
+  .hero-scroll {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: var(--warm-gray);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--terracotta), transparent);
+    animation: scrollAnim 1.5s ease-in-out infinite;
+  }
+
+  @keyframes scrollAnim {
+    0%, 100% { opacity: 0.4; transform: scaleY(0.8); }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* SECTION BASE */
+  section { padding: 6rem 5rem; }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1; max-width: 40px;
+    height: 1px; background: var(--terracotta); opacity: 0.4;
+  }
+
+  .section-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.2;
+    color: var(--brown);
+    margin-bottom: 1.5rem;
+  }
+
+  /* STORY SECTION */
+  .story { background: var(--warm-white); }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .story-sticky {
+    position: sticky; top: 6rem;
+  }
+
+  .story-quote {
+    font-family: 'Lora', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--brown-mid);
+    border-left: 3px solid var(--terracotta);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .story-bio {
+    font-size: 0.88rem;
+    line-height: 1.9;
+    color: var(--warm-gray);
+  }
+
+  .story-timeline { display: flex; flex-direction: column; gap: 3rem; }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+  }
+
+  .timeline-dot-col {
+    display: flex; flex-direction: column; align-items: center;
+    padding-top: 0.3rem;
+  }
+
+  .timeline-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    flex-shrink: 0;
+  }
+
+  .timeline-line {
+    width: 1px; flex: 1;
+    background: rgba(196, 99, 58, 0.2);
+    margin-top: 6px;
+  }
+
+  .timeline-item:last-child .timeline-line { display: none; }
+
+  .timeline-period {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--terracotta);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-role {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    color: var(--brown);
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-company {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .timeline-text {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: var(--warm-gray);
+    margin-bottom: 1rem;
+  }
+
+  .timeline-wins {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  .win-tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: rgba(196, 99, 58, 0.08);
+    border: 1px solid rgba(196, 99, 58, 0.2);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--terracotta-dark);
+  }
+
+  /* SKILLS */
+  .skills { background: var(--cream); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .skill-card {
+    background: var(--warm-white);
+    border-radius: 8px;
+    padding: 1.8rem;
+    border: 1px solid rgba(196, 99, 58, 0.1);
+  }
+
+  .skill-card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-card-title {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: var(--brown);
+    margin-bottom: 0.8rem;
+  }
+
+  .skill-list {
+    list-style: none;
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+  }
+
+  .skill-list li {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--warm-gray);
+    background: var(--cream);
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+  }
+
+  /* HIGHLIGHT */
+  .highlight {
+    background: var(--brown);
+    padding: 5rem;
+    text-align: center;
+  }
+
+  .highlight-text {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-style: italic;
+    color: var(--warm-white);
+    max-width: 750px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  .highlight-sub {
+    font-size: 0.85rem;
+    color: rgba(255,253,249,0.5);
+    letter-spacing: 0.05em;
+  }
+
+  /* CONTACT */
+  .contact { background: var(--cream-dark); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .contact-text {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: var(--warm-gray);
+    margin-bottom: 2rem;
+  }
+
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem;
+    text-decoration: none;
+    color: var(--brown);
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 0.8rem 1rem;
+    background: var(--warm-white);
+    border-radius: 6px;
+    border: 1px solid rgba(196, 99, 58, 0.1);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .contact-link:hover { border-color: var(--terracotta); transform: translateX(4px); }
+
+  .contact-link-icon {
+    width: 36px; height: 36px;
+    background: rgba(196, 99, 58, 0.1);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-right {
+    background: var(--warm-white);
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 1px solid rgba(196, 99, 58, 0.12);
+  }
+
+  .contact-stat {
+    display: flex; align-items: baseline; gap: 0.6rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .contact-stat:last-child { border-bottom: none; }
+
+  .contact-stat-num {
+    font-family: 'Lora', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--terracotta);
+  }
+
+  .contact-stat-desc {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    line-height: 1.4;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--brown);
+    padding: 2rem 5rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .footer-name {
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    color: rgba(255,253,249,0.6);
+  }
+
+  .footer-note {
+    font-size: 0.75rem;
+    color: rgba(255,253,249,0.35);
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1rem; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 7rem 2rem 3rem; }
+    .hero-left::after { display: none; }
+    .hero-right { padding: 3rem 2rem; }
+    section { padding: 4rem 2rem; }
+    .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .story-sticky { position: static; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .highlight { padding: 4rem 2rem; }
+    footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .hero-metrics { grid-template-columns: 1fr 1fr; }
+    .metric-card.featured { grid-column: span 2; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-name">Sri Nurindah Sari</span>
+  <div class="nav-links">
+    <a href="#story">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-tag">Project & Product Manager</p>
+    <h1 class="hero-name">Indah<br><em>makes things</em><br>ship.</h1>
+    <p class="hero-title">Jakarta · Remote & Relocation · Open to work</p>
+    <p class="hero-desc">
+      4+ years delivering enterprise software, marketplace, and media products — from the first line of a backlog to a live Play Store release. I sit at the intersection of client trust, team alignment, and delivery discipline.
+    </p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Let's talk</a>
+      <a href="#experience" class="btn-secondary">See my work</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-metrics">
+      <div class="metric-card featured">
+        <div class="metric-number">5 concurrent</div>
+        <div class="metric-label">Enterprise client projects — sole PM, no layer above</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">40→78%</div>
+        <div class="metric-label">Payment success rate improved</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">1M+ MAU</div>
+        <div class="metric-label">Marketplace in 5 months from zero</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">95%</div>
+        <div class="metric-label">E-learning revenue growth</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">IDR 855M</div>
+        <div class="metric-label">GMV generated in 5 months</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div>scroll</div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <p class="section-label">Who I am</p>
+  <h2 class="section-title">From debugging code to<br>owning the whole delivery.</h2>
+  <div class="story-grid">
+    <div class="story-sticky">
+      <blockquote class="story-quote">
+        "I started as a QA engineer. That taught me that quality is everyone's job — but someone has to own it."
+      </blockquote>
+      <p class="story-bio">
+        I'm Indah — a Project and Product Manager based in Jakarta with a CS background that gives me unusual precision in a PM role. I write specs engineers actually trust, catch edge cases before QA does, and navigate client conversations with technical fluency most PMs can't offer.<br><br>
+        I've built things from scratch, rescued failing funnels, and kept five client projects moving in parallel. I work best when there's ambiguity to resolve, a team to align, and a deadline that matters.
+      </p>
+    </div>
+    <div class="story-timeline" id="experience">
+      <!-- Vertilogic -->
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot-col"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div>
+          <p class="timeline-period">Feb 2025 – Present</p>
+          <h3 class="timeline-role">Project Manager</h3>
+          <p class="timeline-company">Vertilogic · Technology Consulting · Remote</p>
+          <p class="timeline-text">
+            Sole PM across 5 live enterprise client projects — a national Super App for an APAC insurance client, a B2B distributor loyalty portal, a field sales platform, an enterprise accounting system, and a 13-domain automotive web ecosystem. No internal PM above me. I own the client relationship, sprint execution, BRD/FSD writing, change request governance, and release management end-to-end.
+          </p>
+          <div class="timeline-wins">
+            <span class="win-tag">Super App delivered on schedule</span>
+            <span class="win-tag">Zero post-launch critical defects</span>
+            <span class="win-tag">5 concurrent sprints</span>
+            <span class="win-tag">BRD · FSD · CR governance</span>
+          </div>
+        </div>
+      </div>
+      <!-- Kompas -->
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot-col"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div>
+          <p class="timeline-period">Feb 2024 – Feb 2025</p>
+          <h3 class="timeline-role">Product Manager</h3>
+          <p class="timeline-company">Harian Kompas · Indonesia's largest media company · Jakarta</p>
+          <p class="timeline-text">
+            Owned the payment ecosystem across 30+ business units. Diagnosed a critical ~40% payment success rate, instrumented the full funnel in GA4, Mixpanel, and PostHog, ran structured monthly RCA cycles with engineering and commercial leads — and moved the needle to 78%. Also ran 0→1 for a loyalty programme and coordinated vendor-led e-learning platform delivery that drove 95% revenue growth.
+          </p>
+          <div class="timeline-wins">
+            <span class="win-tag">40% → 78% payment success</span>
+            <span class="win-tag">2,500+ voucher redemptions/mo</span>
+            <span class="win-tag">95% e-learning revenue growth</span>
+            <span class="win-tag">+296% enrolled users</span>
+            <span class="win-tag">329% eBook engagement</span>
+          </div>
+        </div>
+      </div>
+      <!-- Toco -->
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot-col"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div>
+          <p class="timeline-period">Dec 2022 – Feb 2024</p>
+          <h3 class="timeline-role">Product Manager</h3>
+          <p class="timeline-company">Sprout Digital Labs (Toco.id) · Startup · Jakarta</p>
+          <p class="timeline-text">
+            First PM on the founding team. Led a 30-person cross-functional squad across engineering, design, QA, and ops to build an omnichannel community marketplace from zero — iOS, Android, web platform, and CMS shipped simultaneously. Made key sequencing calls (seller-first before buyer activation) that shaped the first 5 months of delivery. When a competitor scaled back, we were ready: 1M+ MAU and IDR 855M GMV in 5 months.
+          </p>
+          <div class="timeline-wins">
+            <span class="win-tag">1M+ MAU in 5 months</span>
+            <span class="win-tag">IDR 855M GMV</span>
+            <span class="win-tag">30-person squad</span>
+            <span class="win-tag">iOS · Android · Web · CMS</span>
+            <span class="win-tag">4 client products in parallel</span>
+          </div>
+        </div>
+      </div>
+      <!-- QA -->
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot-col"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+        <div>
+          <p class="timeline-period">Jun 2022 – Dec 2022</p>
+          <h3 class="timeline-role">QA Engineer</h3>
+          <p class="timeline-company">Sprout Digital Labs · Jakarta</p>
+          <p class="timeline-text">
+            Where it all started. Executed 3,000+ test cases, identified 450+ critical defects across mobile and web, and contributed to a ~60% reduction in post-release defect rates. This foundation is why I write acceptance criteria engineers trust and catch spec gaps before they become sprint blockers.
+          </p>
+          <div class="timeline-wins">
+            <span class="win-tag">3,000+ test cases</span>
+            <span class="win-tag">450+ defects found</span>
+            <span class="win-tag">~60% defect rate reduction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <p class="section-label">What I bring</p>
+  <h2 class="section-title">Delivery, product, and the<br>technical layer in between.</h2>
+  <div class="skills-grid">
+    <div class="skill-card fade-up">
+      <div class="skill-card-icon">🗂️</div>
+      <h3 class="skill-card-title">Delivery & Governance</h3>
+      <ul class="skill-list">
+        <li>BRD / FSD / PRD authoring</li>
+        <li>Sprint planning & execution</li>
+        <li>Change request governance</li>
+        <li>Manday estimation</li>
+        <li>Milestone tracking</li>
+        <li>UAT coordination</li>
+        <li>App Store release management</li>
+        <li>Risk & dependency mgmt</li>
+      </ul>
+    </div>
+    <div class="skill-card fade-up">
+      <div class="skill-card-icon">🤝</div>
+      <h3 class="skill-card-title">Stakeholder Management</h3>
+      <ul class="skill-list">
+        <li>Direct enterprise client ownership</li>
+        <li>Multi-BU alignment</li>
+        <li>Vendor management</li>
+        <li>APAC cross-cultural comms</li>
+        <li>Executive reporting</li>
+        <li>Agile ceremonies</li>
+        <li>Backlog refinement</li>
+      </ul>
+    </div>
+    <div class="skill-card fade-up">
+      <div class="skill-card-icon">📊</div>
+      <h3 class="skill-card-title">Product & Analytics</h3>
+      <ul class="skill-list">
+        <li>OKRs & KPI design</li>
+        <li>Funnel & cohort analysis</li>
+        <li>GA4 · Mixpanel · PostHog</li>
+        <li>RICE · MoSCoW prioritisation</li>
+        <li>A/B testing</li>
+        <li>0→1 product delivery</li>
+        <li>Experiment design</li>
+      </ul>
+    </div>
+    <div class="skill-card fade-up">
+      <div class="skill-card-icon">🛠️</div>
+      <h3 class="skill-card-title">Tools</h3>
+      <ul class="skill-list">
+        <li>Jira · Confluence</li>
+        <li>Azure DevOps · Notion</li>
+        <li>Trello · ClickUp</li>
+        <li>Figma · Miro</li>
+        <li>Slack · Google Workspace</li>
+        <li>Canva</li>
+      </ul>
+    </div>
+    <div class="skill-card fade-up">
+      <div class="skill-card-icon">🤖</div>
+      <h3 class="skill-card-title">AI-Augmented PM</h3>
+      <ul class="skill-list">
+        <li>Claude · ChatGPT · Gemini</li>
+        <li>AI-assisted spec drafting</li>
+        <li>Research synthesis</li>
+        <li>Prompt engineering for PM workflows</li>
+      </ul>
+    </div>
+    <div class="skill-card fade-up">
+      <div class="skill-card-icon">🌏</div>
+      <h3 class="skill-card-title">Languages & Education</h3>
+      <ul class="skill-list">
+        <li>Indonesian (Native)</li>
+        <li>English (Fluent · C1)</li>
+        <li>B.Sc. Computer Science — Gunadarma</li>
+        <li>Full-Stack PM Certificate — RevoU</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHT -->
+<div class="highlight">
+  <p class="highlight-text">"I don't just manage the project. I'm the one who makes sure the right thing gets built — and that it actually ships."</p>
+  <p class="highlight-sub">Sri Nurindah Sari · Jakarta, Indonesia</p>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <p class="section-label">Get in touch</p>
+  <h2 class="section-title">Currently open to new roles.</h2>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-text">
+        I'm actively looking for my next PM or Project Manager role — preferably remote or Jakarta-based. I work best on product-delivery teams that move fast, care about quality, and want a PM who's both strategic and hands-on in the weeds.<br><br>
+        Drop me a message. I respond quickly.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:srinurindahsari00@gmail.com" class="contact-link">
+          <div class="contact-link-icon">✉️</div>
+          srinurindahsari00@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/sri-nurindah-sari" target="_blank" class="contact-link">
+          <div class="contact-link-icon">💼</div>
+          linkedin.com/in/sri-nurindah-sari
+        </a>
+        <a href="tel:+6287777820536" class="contact-link">
+          <div class="contact-link-icon">📱</div>
+          (+62) 877-7782-0536
+        </a>
+      </div>
+    </div>
+    <div class="contact-right">
+      <div class="contact-stat">
+        <span class="contact-stat-num">4+</span>
+        <span class="contact-stat-desc">years of PM & delivery experience</span>
+      </div>
+      <div class="contact-stat">
+        <span class="contact-stat-num">30+</span>
+        <span class="contact-stat-desc">person squads led across engineering, design, QA & ops</span>
+      </div>
+      <div class="contact-stat">
+        <span class="contact-stat-num">10+</span>
+        <span class="contact-stat-desc">products built and shipped end-to-end</span>
+      </div>
+      <div class="contact-stat">
+        <span class="contact-stat-num">5</span>
+        <span class="contact-stat-desc">concurrent enterprise projects managed right now</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Sri Nurindah Sari (Indah)</span>
+  <span class="footer-note">Jakarta, Indonesia · Open to remote & relocation · 2025</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
